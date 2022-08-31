@@ -20,6 +20,7 @@ Office hours:  TBD
 
 ### TAs
 Section 002 - Richard-John Lin (ryl7673@nyu.edu)
+
 Section 003 - Jeroen Olieslagers (jo2229@nyu.edu)
 
 ### Overview
