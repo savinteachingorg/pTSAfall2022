@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=0.5in]{geometry}
+
+\usepackage[square,numbers,sort&compress]{natbib}
+%\usepackage[sort&compress]{natbib}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\usepackage{graphicx}
+\newcommand{\bigo}[1]{{\cal O}\left(#1 \right)}
+\newcommand{\p}[1]{\mathrm{P}\left(#1 \right)}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\tr}{^\mathrm{t}}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+
+\textbf{DS-GA 1018.001 Probabilistic Time Series Analysis\\
+Homework 2}\\
+Due: Oct 13
+\end{center}
+
+\noindent \textbf{Problem 1.} LDS model, 15p \\ 
+Consider a special case of LDS with $\vect{C} = \vect{I}$ and  $\vect{R} = \sigma^2 \vect{I}$, where $\vect{I}$ denotes the identity matrix. 
+Show that in the limit where there is no observation noise the best estimate for latent $\vect{z}_i$ is to simply use the observation $\vect{x}_i$: 
+formally, in the limit when $\sigma^2 \rightarrow 0$ the posterior for $\vect{z}_i$ has mean $\vect{x}_i$ and vanishing variance.\\
+  
+ \noindent \textbf{Problem 2. } LDS with inputs, 20p \\
+Consider the standard parametrization of the LDS model, with a new latent transition that depends on an observed sequence of inputs $\mathbf{y}_{1:T}$ in the form:
+$$\mathbf{z}_{t+1} = \mathbf{A}\mathbf{z}_{t} +  \mathbf{B}\mathbf{y}_{t} +  \mathbf{w}_{t} , $$ 
+where matrix  $\mathbf{B}$ is an additional model parameter and $\mathbf{y}_{t}$ is the \emph{observed} input vector at time $t$.
+How do the Kalman filtering and smoothing updates change for this variation?\\
+
+\noindent \textbf{Problem 3.} LDS inference with missing observations, 15p \\
+Consider a varia\includegraphics[]{hw2-2022.pdf}
+tion of the original LDS graphical model with one single missing value $\mathbf{x}_j$. 
+Everything else is as in the original; the only difference is that the graphical model loses the downward observation arrow and the corresponding $\mathbf{x}_j$ at that one step.
+How do the Kalman filtering and smoothing updates change?\\
+
+\end{document}
