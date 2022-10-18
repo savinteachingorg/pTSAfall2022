@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=0.5in]{geometry}
+
+\usepackage[square,numbers,sort&compress]{natbib}
+%\usepackage[sort&compress]{natbib}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\usepackage{graphicx}
+\newcommand{\bigo}[1]{{\cal O}\left(#1 \right)}
+\newcommand{\p}[1]{\mathrm{P}\left(#1 \right)}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\tr}{^\mathrm{t}}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+
+\textbf{DS-GA 1018.001  Probabilistic Time Series Analysis\\
+Homework 3}
+\end{center}
+
+\noindent \textbf{Due date: October 30th}\\
+
+\noindent \textbf{Problem 1.}  Particle filtering (20p)\\
+Consider the usual LDS model, but where inference is done using particle filtering instead of the traditional Kalman filter. A) Write down pseudocode for the particle updates. B) Given the generated samples, $\{\mathbf{z}_i^{(k)}\}_{k=1:K, i=1:t}$, how would you go about computing the quantities $\mu_{i|i}$, $\Sigma_{i|i}$ and $\mathbb{E}[\mathbf{z}_i \mathbf{z}_{i+1}^\top]$?\\
+\emph{Hint: Use the general form from the lecture, and plug in the expressions for the different probabilities of the LDS model. The mean and variance can be written as expectations and approximated accordingly.}\\
+
+\noindent \textbf{Problem 2.} (15p)\\
+Consider the HMM with K=3 latent states and discrete observations $\{1,2,3\}$, with parameters specified by:
+initial distribution $\pi = [1, \, 0,\, 0]$, 
+transition matrix 
+$ \mathbf{A} = \begin{bmatrix}
+    0 & 0.5 & 0.5\\
+    1 & 0 & 0 \\
+    0 & 1 & 0
+    \end{bmatrix}
+$, where $A_{ij} = \mathrm{P}(z_{t+1}= j | z_t= i)$ 
+and likelihood $\mathrm{P}(x_t|z_t)$ described by matrix entries $B_{xz}$:
+$ \mathbf{B} =  \begin{bmatrix}
+    0.5 & 0.5 & 0 \\
+    0.5 & 0 & 0.5 \\
+    0 & 0.5 & 0.5
+    \end{bmatrix}.
+    $\\
+ Write down all possible state sequences consistent with observations a) 1, 2, 3 and b) 1, 3, 1.\\
+
+\noindent \textbf{Problem 3.} (15p)\\
+Construct an HMM that generates the observation sequence $A^{k_1}C^{k_2}A^{k_3}C^{k_4}$ where $A^{k_1}$ denotes $k_1$ repeats of symbol $A$ and the number of repeats $k_i$ are drawn from the set $\{1,2,3\}$ with equal probability.
+
+
+\end{document}
