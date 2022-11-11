@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=0.5in]{geometry}
+
+\usepackage[square,numbers,sort&compress]{natbib}
+%\usepackage[sort&compress]{natbib}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\usepackage{graphicx}
+\newcommand{\bigo}[1]{{\cal O}\left(#1 \right)}
+\newcommand{\p}{\mathrm{P}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\tr}{^\top}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+
+\textbf{DS-GA 1810.001 Probabilistic Time Series Analysis\\
+Homework 4}
+\end{center}
+
+\noindent \textbf{Due date: Nov 24}\\
+\\
+\noindent \textbf{Problem 1. (15pt)} Which of these objects are a Gaussian process?
+\begin{itemize}
+\item linear combination of 2 GPs: $f(x) = a f_1(x) + b f_2(x)$ where $f_i \sim \mathcal{GP}(\mu_i(x); k_i(x,y))$ (independent) and $a,\, b$ are fixed parameters.
+\item random linear: $ f(x) = a x + w$ where $a \sim \mathcal{N}(0,\sigma_a^2)$, $w\sim \mathcal{N}(0,\sigma_w^2)$.
+\item random periodic: $f(x) = a \cos(wx)+ b \sin(wx)$ with $a \sim \mathcal{N}(0,\sigma^2)$, $b \sim \mathcal{N}(0,\sigma^2)$, w fixed parameter.
+\end{itemize}
+If yes, then write down the corresponding mean and covariance functions.\\
+
+\noindent \textbf{Problem 2. (20pt)} 
+Derive the mean and covariance of  $\mathrm{P}(y|\theta)$ for the FITC approximation described in the lecture (this is obtained by marginalizing out $\mathbf{u}$ and $\mathbf{f})$.\\
+%$$\p(\vect{y}|\theta) = \mathcal{N}\left( \mathbf{0},  \mathbf{K}_{fu} \mathbf{K}_{uu}^{-1}\mathbf{K}_{uf}  + \mathbf{D} + \sigma_y^2 \mathbf{I}\right).$$\\
+\noindent \emph{Hint: one can think of the approximate model as a sequence of linear gaussian steps and use the usual simple gaussid.pdf properties.}\\
+
+\noindent \textbf{Problem 3. (15pt)} 
+What GP-based model would you use for the Johnson\&Johnson quarterly earnings database?
+Explain your choices. Would it matter if the goal of your analysis is to interpolate to account for missing data in the middle of the recorded time interval vs.\ extrapolating a decade into the future?\\
+
+\noindent \textbf{Optional (extra credit, 10pt)}
+Fit your choice of nonlinear GP regression model on the data using the function in the period 1970-1974 and 1980-1990 (extrapolation in the future) as test points and the rest of the dataset for training. Compare your predictions against the actual data and comment on result.\\
+
+\noindent \textbf{Problem 4. (extra credit, 10pt)} 
+What would be a good choice of GP mean and covariance function for modeling data with statistics given by an ARIMA (1,2,1) model?\\
+
+\end{document}
