@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=0.5in]{geometry}
+
+\usepackage[square,numbers,sort&compress]{natbib}
+%\usepackage[sort&compress]{natbib}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\usepackage{graphicx}
+\newcommand{\bigo}[1]{{\cal O}\left(#1 \right)}
+\newcommand{\p}{\mathrm{P}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\tr}{^\top}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+
+\textbf{DS-GA 1018.001  Probabilistic Time Series Analysis \\
+Homework 5}
+\end{center}
+
+\noindent \textbf{Due date: Dec 12}\\
+
+\noindent \textbf{Problem 1. (10pt)} Show that white noise has a flat spectrum.\\
+
+\noindent \textbf{Problem 2. (15+10pt)} Given an AR(1) process, $ x_t = \phi x_{t-1} + w_t$, with $|\phi|<1$ and white noise variance $\sigma_w^2$, \\
+1) compute the corresponding power spectrum, $f_x(\omega)$.\\
+2) show that the CCF can be obtained by inverting $f_x(\omega)$.\\
+\emph{Note: see also problem 4.6 from Shumway (pg 232 on tsa4.pdf).}\\
+
+\noindent \textbf{Problem 3. (15pt)} Given an MA(1) process, $ x_t = w_t - \theta w_{t-1}$, with parameter $\theta$ and white noise variance $\sigma_w^2$. Compute the corresponding power spectrum, $f_x(\omega)$. \\
+
+\noindent \textbf{Problem 4. (Extra credit: 30pt)}  Consider  data generated according to the following process:
+\begin{eqnarray}
+x_1(t) & = &  2 \cos(2\pi \omega_1 t) + 3 \sin(2\pi \omega_1 t) \\
+x_2(t) & = & 4 \cos(2\pi \omega_2 t) + 5 \sin(2\pi \omega_2 t) \\
+ x_3(t) & = & 6 \cos(2\pi \omega_3 t) + 7\sin(2\pi \omega_3 t) \\
+ x(t) &=& x_1(t) + x_2(t) + x_3(t)
+\end{eqnarray}
+with $\omega_1 = 6/100$, $\omega_2 = 1/10$ and  $\omega_3 = 4/10$. \\ 1) Numerically compute and plot the scaled periodogram of the data for a sequence of length 100. \\
+2) Do the same for a noisy version of the same signal $y(t) = x(t) + 0.1 w_t$, with $w_t$  iid white noise with unit variance.
+Comment on the results.
+\end{document}
